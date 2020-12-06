@@ -1,0 +1,20 @@
+enter = ""
+enter = input("Виберіть А(А) або Б(B): ")
+if enter.upper() == "A" or enter.upper() == "А":
+    text = input("Введіть текст: ")
+    print(text)
+    y = text.replace('.', ' ').replace(',', ' ').replace('!', ' ').replace('?', ' ').replace('-', ' ').replace(':',
+                                                                                                               ' ')
+    words = y.split()
+    print([word for word in words if len(word) > 3])
+
+elif enter.upper() == "B" or enter.upper() == "Б":
+    text = input("Введіть ваш текст: ")
+    l = []
+    s = ' '.join(text)
+    for i in s:
+        if i not in l and i.isalpha():
+            print(i + ': ' + str(s.count(i)))
+            print("------------")
+            l.append(i)
+
